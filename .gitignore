@@ -1,0 +1,52 @@
+# Environment variables - NEVER commit
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code internal data
+.claude/
+
+# Audit log (contains run history with entity data)
+audit/audit_log.jsonl
+
+# Generated files from agent runs
+data/intake_patient_data.json
+data/intake_patient_*.json
+data/intake_bulk_*.pdf
+data/bulk_intake_patients.json
+data/intake_blob_url.txt
+data/onboarding_docs/
+data/reports/
+data/report_charts/
+data/weekly_metrics.csv
+data/synthea_patients/
+
+# Logs and generated outputs
+*.log
+logs/

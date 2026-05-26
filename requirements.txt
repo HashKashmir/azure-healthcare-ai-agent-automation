@@ -1,0 +1,27 @@
+# Azure AI / OpenAI
+azure-ai-projects
+azure-ai-documentintelligence
+azure-communication-email
+azure-storage-blob
+azure-data-tables
+azure-servicebus
+openai
+
+# Mock APIs
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Data generation & processing
+faker
+pandas
+openpyxl
+
+# Reporting
+matplotlib
+plotly
+weasyprint
+
+# Utilities
+python-dotenv
+requests

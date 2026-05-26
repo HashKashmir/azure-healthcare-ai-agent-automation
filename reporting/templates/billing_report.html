@@ -1,0 +1,64 @@
+﻿<!-- Healthcare AI Billing Performance Report Email Template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Healthcare AI Billing Performance Report</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; margin: 0; padding: 0; }
+    .wrapper  { max-width: 780px; margin: 0 auto; background: #fff; }
+    .header   { background: #4A148C; color: #fff; padding: 26px 32px; }
+    .header h1 { margin: 0 0 4px; font-size: 20px; }
+    .header p  { margin: 0; font-size: 13px; opacity: .80; }
+    .kpi-row  { display: flex; gap: 12px; margin: 20px 0; }
+    .kpi-card { flex: 1; background: #F3E5F5; border-radius: 6px; padding: 14px 16px; text-align: center; }
+    .kpi-card .val { font-size: 22px; font-weight: 700; color: #4A148C; }
+    .kpi-card .lbl { font-size: 11px; color: #546E7A; margin-top: 4px; }
+    .section-title { font-size: 15px; font-weight: 700; color: #4A148C;
+                     border-bottom: 2px solid #CE93D8; padding-bottom: 5px; margin: 22px 0 12px; }
+    .insight  { border-left: 4px solid #4A148C; background: #F3E5F5;
+                padding: 12px 16px; margin-bottom: 12px; border-radius: 0 4px 4px 0; }
+    .insight.warning  { border-color: #E65100; background: #FFF3E0; }
+    .insight.critical { border-color: #B71C1C; background: #FFEBEE; }
+    .insight.ok       { border-color: #2E7D32; background: #E8F5E9; }
+    .insight .title { font-weight: 700; font-size: 14px; margin-bottom: 5px; }
+    .insight .rec   { font-size: 12px; color: #555; margin-top: 6px; }
+    .footer   { background: #ECEFF1; padding: 12px 32px; font-size: 11px; color: #90A4AE; text-align: center; }
+    img { max-width: 100%; border-radius: 5px; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <h1>Healthcare AI &mdash; Billing Performance Report</h1>
+      <p>Audience: Billing Manager &bull; {{ week_str }} &bull; {{ report_id }}</p>
+    </div>
+
+    <div style="padding: 24px 32px;">
+
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="val">0</div><div class="lbl">Claims Submitted</div></div>
+        <div class="kpi-card"><div class="val">0%</div><div class="lbl">Approval Rate</div></div>
+        <div class="kpi-card"><div class="val">0%</div><div class="lbl">Auto-Resolve Rate (target 68%)</div></div>
+        <div class="kpi-card"><div class="val">0</div><div class="lbl">Open Exception Queue</div></div>
+      </div>
+      <p style="font-size:11px;color:#90A4AE;margin-top:-8px;">
+        * KPI values above are placeholders replaced dynamically by the agent at report build time.
+      </p>
+
+      <div class="section-title">AI-Generated Insights</div>
+      {{ insights_html }}
+
+      <div class="section-title">Rejection Reason Breakdown</div>
+      {{ charts_html }}
+
+    </div>
+
+    <div class="footer">
+      Generated {{ generated_at }} by Healthcare AI Analytics Agent &bull;
+      All data is synthetic &bull; Report ID: {{ report_id }}
+    </div>
+  </div>
+</body>
+</html>
+
